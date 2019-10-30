@@ -25,6 +25,7 @@ HEADERS += \
 DISTFILES += ApplicationServerListCommands.json
 
 DESTDIR = $$OUT_PWD/../ApplicationServer/debug/plugins
+CONFIG(test): DESTDIR = $$OUT_PWD/../ApplicationServerTest/debug/plugins
 
 # Default rules for deployment.
 unix {

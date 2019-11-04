@@ -24,8 +24,8 @@ HEADERS += \
 
 DISTFILES += ApplicationServerListCommands.json
 
-DESTDIR = $$OUT_PWD/../ApplicationServer/debug/plugins
-CONFIG(test): DESTDIR = $$OUT_PWD/../ApplicationServerTest/debug/plugins
+DESTDIR = $$OUT_PWD/../ApplicationServer/plugins
+CONFIG(test): DESTDIR = $$OUT_PWD/../ApplicationServerTest/plugins
 
 # Default rules for deployment.
 unix {
@@ -35,8 +35,8 @@ unix {
 
 
 
-win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../ApplicationServerInterface/release/ -lApplicationServerInterface
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../ApplicationServerInterface/debug/ -lApplicationServerInterface
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../ApplicationServerInterface/ -lApplicationServerInterface
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../ApplicationServerInterface/ -lApplicationServerInterface
 else:unix: LIBS += -L$$OUT_PWD/../ApplicationServerInterface/ -lApplicationServerInterface
 
 INCLUDEPATH += $$PWD/../ApplicationServerInterface

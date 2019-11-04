@@ -2,7 +2,6 @@
 #define LISTCOMMANDSCOMMAND_H
 
 #include <CommandInterface.h>
-#include <QGenericPlugin>
 
 class ListCommandsCommand : public CommandInterface
 {

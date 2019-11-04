@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
-add_library(ApplicationServerListCommands SHARED listcommandscommand.cpp listcommandscommand.h)
+add_library(ApplicationServerListCommands SHARED listcommandscommand.cpp)
 
 find_package(Qt5Core REQUIRED)
 qt5_use_modules(ApplicationServerListCommands Core)

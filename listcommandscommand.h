@@ -6,8 +6,6 @@
 class ListCommandsCommand : public CommandInterface
 {
     Q_OBJECT
-    Q_PLUGIN_METADATA(IID CommandInterface_iid FILE "ApplicationServerListCommands.json")
-    Q_INTERFACES(CommandInterface)
 
 public:
     explicit ListCommandsCommand(QObject *parent = nullptr);

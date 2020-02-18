@@ -25,3 +25,6 @@ target_include_directories(ApplicationServerListCommands PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}
 )    
 target_link_libraries(ApplicationServerListCommands ApplicationServerCore ApplicationServerInterface)
+
+install(TARGETS ${target} DESTINATION "${PLUGIN_FOLDER}")
+install(FILES ${HEADER} DESTINATION "${INCLUDE_FOLDER}")

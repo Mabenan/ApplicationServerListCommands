@@ -18,13 +18,20 @@ file(GLOB HEADER
     "*.hpp"
 )
 add_library(${target} SHARED ${SRC})
-
+if(WIN32)
+set(ApplicationServer_DIR "C:/Program Files (x86)/ApplicationServer/bin")
+else()
+set(ApplicationServer_DIR "/user/bin/")
+endif()
 find_package(Qt5Core REQUIRED)
-qt5_use_modules(ApplicationServerListCommands Core)
+find_package(Qt5HttpServer REQUIRED)
+find_package(ApplicationServer)
+qt5_use_modules(${target} Core HttpServer)
+
 target_include_directories(ApplicationServerListCommands PUBLIC 
     ${CMAKE_CURRENT_SOURCE_DIR}
 )    
-target_link_libraries(ApplicationServerListCommands ApplicationServerCore ApplicationServerInterface)
+target_link_libraries(ApplicationServerListCommands ApplicationServerInterface ApplicationServerCore)
 
-install(TARGETS ${target} DESTINATION "${PLUGIN_FOLDER}")
-install(FILES ${HEADER} DESTINATION "${INCLUDE_FOLDER}")
+install(TARGETS ${target} DESTINATION "${ApplicationServer_DIR}/plugins")
+install(FILES ${HEADER} DESTINATION "${ApplicationServer_DIR}/../include")

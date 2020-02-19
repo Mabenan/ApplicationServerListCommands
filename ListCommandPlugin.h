@@ -1,8 +1,8 @@
 #ifndef ListCommandPlugin_H
 #define ListCommandPlugin_H
 
-#include <ApplicationServerPluginInterface.h>
-
+#include <ApplicationServerInterface>
+#include <QtPlugin>
 class ListCommandPlugin : public ApplicationServerPluginInterface
 {
     Q_OBJECT

@@ -1,7 +1,7 @@
 #ifndef LISTCOMMANDSCOMMAND_H
 #define LISTCOMMANDSCOMMAND_H
 
-#include <CommandInterface.h>
+#include <ApplicationServerInterface>
 
 class ListCommandsCommand : public CommandInterface
 {

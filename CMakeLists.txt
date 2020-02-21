@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.5)
-
-set(target "ApplicationServerListCommands")
+if(NOT DEFINED ${CMAKE_PROJECT_NAME})
 project(${target} LANGUAGES CXX)
+endif()
+set(target "ApplicationServerListCommands")
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -20,7 +21,9 @@ file(GLOB HEADER
 add_library(${target} SHARED ${SRC})
 find_package(Qt5Core REQUIRED)
 find_package(Qt5HttpServer REQUIRED)
+if(${PACKAGE})
 find_package(ApplicationServer)
+endif()
 qt5_use_modules(${target} Core HttpServer)
 
 target_include_directories(ApplicationServerListCommands PUBLIC 
@@ -28,5 +31,5 @@ target_include_directories(ApplicationServerListCommands PUBLIC
 )    
 target_link_libraries(ApplicationServerListCommands ApplicationServerInterface ApplicationServerCore)
 
-install(TARGETS ${target} DESTINATION "${ApplicationServer_DIR}/plugins")
-install(FILES ${HEADER} DESTINATION "${ApplicationServer_DIR}/../include")
+install(TARGETS ${target} DESTINATION ${PLUGIN_FOLDER})
+install(FILES ${HEADER} DESTINATION ${INCLUDE_FOLDER})

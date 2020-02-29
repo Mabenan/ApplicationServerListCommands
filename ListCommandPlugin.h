@@ -16,6 +16,8 @@ private:
     // CommandInterface interface
 public:
     void init(ApplicationServerInterface *app);
+
+	virtual void install(ApplicationServerInterface *app);
 };
 
 #endif // ListCommandPlugin_H

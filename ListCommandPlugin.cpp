@@ -12,3 +12,6 @@ void ListCommandPlugin::init(ApplicationServerInterface *app)
     app->registerCommand(new ListCommandsCommand(this));
 }
 
+void ListCommandPlugin::install(ApplicationServerInterface* app){
+
+}

@@ -7,6 +7,7 @@ set(target "ApplicationServerListCommands")
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/plugins/server)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
@@ -35,7 +36,7 @@ target_link_libraries(ApplicationServerListCommands ApplicationServerInterface A
 install(TARGETS ${target} EXPORT ${target} 
 LIBRARY DESTINATION "${LIB_FOLDER}"
     ARCHIVE DESTINATION "${LIB_FOLDER}"
-    RUNTIME DESTINATION "${PLUGIN_FOLDER}"
+    RUNTIME DESTINATION "${PLUGIN_FOLDER}/server"
     INCLUDES DESTINATION "${INCLUDE_FOLDER}")
 install(
   EXPORT ${target} 

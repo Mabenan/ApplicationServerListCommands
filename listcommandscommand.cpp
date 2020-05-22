@@ -9,13 +9,13 @@ ListCommandsCommand::ListCommandsCommand(QObject *parent)
 
 QString ListCommandsCommand::getName() const
 {
-    return "list";
+    return QStringLiteral("list");
 }
 
 void ListCommandsCommand::execute(ApplicationServerInterface *app)
 {
     qInfo() << "The following commands are registered:";
-    for(QString command :app->GetCommands()){
+    for(const QString& command :app->GetCommands()){
         qInfo() << command;
     }
 }

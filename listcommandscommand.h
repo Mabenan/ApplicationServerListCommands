@@ -13,8 +13,8 @@ public:
 private:
     // CommandInterface interface
 public:
-    QString getName() const;
-    void execute(ApplicationServerInterface *app);
+    QString getName() const override;
+    void execute(ApplicationServerInterface *app) override;
 };
 
 #endif // LISTCOMMANDSCOMMAND_H

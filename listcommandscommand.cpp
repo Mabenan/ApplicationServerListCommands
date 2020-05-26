@@ -3,20 +3,11 @@
 #include <QtGlobal>
 
 ListCommandsCommand::ListCommandsCommand(QObject *parent)
-    : CommandInterface(parent)
-{
-}
+    : CommandInterface(parent) {}
 
-QString ListCommandsCommand::getName() const
-{
-    return QStringLiteral("list");
-}
+QString ListCommandsCommand::getName() const { return QStringLiteral("list"); }
 
-void ListCommandsCommand::execute(ApplicationServerInterface *app)
-{
-    qInfo() << "The following commands are registered:";
-    for(const QString& command :app->GetCommands()){
-        qInfo() << command;
-    }
+void ListCommandsCommand::execute(ApplicationServerInterface *app) {
+  qInfo() << "The following commands are registered:";
+  Q_FOREACH (const QString &command, app->GetCommands()) { qInfo() << command; }
 }
-

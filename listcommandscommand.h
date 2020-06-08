@@ -14,7 +14,7 @@ private:
     // CommandInterface interface
 public:
     QString getName() const override;
-    void execute(ApplicationServerInterface *app) override;
+    void execute(ApplicationServerInterface *app, QStringList args) override;
 };
 
 #endif // LISTCOMMANDSCOMMAND_H

@@ -7,7 +7,7 @@ ListCommandsCommand::ListCommandsCommand(QObject *parent)
 
 QString ListCommandsCommand::getName() const { return QStringLiteral("list"); }
 
-void ListCommandsCommand::execute(ApplicationServerInterface *app) {
+void ListCommandsCommand::execute(ApplicationServerInterface *app, QStringList /*args*/) {
   qInfo() << "The following commands are registered:";
   Q_FOREACH (const QString &command, app->GetCommands()) { qInfo() << command; }
 }
